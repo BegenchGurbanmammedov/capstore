@@ -6,7 +6,6 @@ import App from "./App";
 import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 
-import { CategoriesProvider } from "./contexts/CategoriesContext";
 import { CartProvider } from "./contexts/CartContext";
 import { store } from "./store/store";
 
@@ -17,11 +16,11 @@ root.render(
     <Provider store= {store}>
       <BrowserRouter>
 
-        <CategoriesProvider>
+     
           <CartProvider>
             <App />
           </CartProvider>
-        </CategoriesProvider>
+
 
     </BrowserRouter>
     </Provider>
