@@ -1,6 +1,7 @@
 import { createSelector } from "reselect";
 
 const selectCategoryReducer = (state) => {
+    console.log(state.categories)
     return state.categories;
 }
 
@@ -14,8 +15,12 @@ export const selectCategories = createSelector(
 
 export const selectCategoriesMap = createSelector(
     [selectCategories],
-    (categories)=> categories.reduce((acc,category)=>{
-    const {title,items}=category;
-    acc[title.toLowerCase()]=items;
-    return acc;
-},{}))
+    (categories)=> {
+        console.log('livertpool')
+        return categories.reduce((acc,category)=>{
+            console.log(category)
+        const {title,items}=category;
+        acc[title.toLowerCase()]=items;
+        return acc;
+        },{})})
+    
